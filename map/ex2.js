@@ -42,10 +42,38 @@ En sortie: [
 
  */
 
-function getFoodCategories(foods) {
+const getFoodCategories = (foods) => {
+  return foods.map((something)=> {
+    
+    if (something.isVegetarian === false) {
+      return something.food + " is not suitable for vegetarians";
+    }
+    else {
+      
+      return something.food + " is suitable for vegetarians";
+    }
+
+  })
 }
 
-
+getFoodCategories ([
+  {
+    food: 'Bacon',
+    isVegetarian: false
+  },
+  {
+    food: 'Sausage',
+    isVegetarian: false
+  },
+  {
+    food: 'Tofu',
+    isVegetarian: true
+  },
+  {
+    food: 'Chick Pea',
+    isVegetarian: true
+  }
+])
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;
